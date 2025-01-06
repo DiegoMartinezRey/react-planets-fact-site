@@ -24,4 +24,8 @@ export const GlobalStyles = createGlobalStyle`
         color: inherit;
     }
 
+    body{
+        color: white;
+        background-color: #070724;
+    }
 `;
