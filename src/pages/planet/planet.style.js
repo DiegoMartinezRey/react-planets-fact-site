@@ -20,7 +20,7 @@ const StyledContentContainer = styled.div`
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: repeat(2, auto);
-		grid-column-gap: 0px;
+		grid-column-gap: 100px;
 		grid-row-gap: 0px;
 		padding: 0 165px;
 	}

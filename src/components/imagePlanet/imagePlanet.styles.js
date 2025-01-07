@@ -44,6 +44,18 @@ const StyledPlanetGeology = styled.img`
 	width: 62px;
 	top: calc(50% + 31px);
 	left: calc(50% - 31px);
+
+	@media screen and (width>767px) {
+		width: 102px;
+		top: calc(50% + 51px);
+		left: calc(50% - 51px);
+	}
+
+	@media screen and (width>1023px) {
+		width: 163px;
+		top: calc(50% + 82px);
+		left: calc(50% - 82px);
+	}
 `;
 
 export {
