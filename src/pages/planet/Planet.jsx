@@ -4,6 +4,7 @@ import InfoPlanet from '../../components/infoPlanet/InfoPlanet';
 import TabPlanet from '../../components/tabPlanet/TabPlanet';
 import { PLANETS_INFO } from '../../constants/planets-info';
 import {
+	StyledContentContainer,
 	StyledOverviewText,
 	StyledPlanet,
 	StyledTextContainer,
@@ -32,17 +33,19 @@ const Planet = ({ planet }) => {
 				setActiveTab={setActiveTab}
 			/>
 
-			<ImagePlanet planetData={planetData} activeTab={activeTab} />
+			<StyledContentContainer>
+				<ImagePlanet planetData={planetData} activeTab={activeTab} />
 
-			<StyledTextContainer>
-				<StyledTitle>{planetData.name}</StyledTitle>
-				<StyledOverviewText>{planetData.overview.content}</StyledOverviewText>
-				<p>
-					Source: <a href={planetData.overview.source}>Wikipedia</a>
-				</p>
-			</StyledTextContainer>
+				<StyledTextContainer>
+					<StyledTitle>{planetData.name}</StyledTitle>
+					<StyledOverviewText>{planetData.overview.content}</StyledOverviewText>
+					<p>
+						Source: <a href={planetData.overview.source}>Wikipedia</a>
+					</p>
+				</StyledTextContainer>
 
-			<InfoPlanet planetData={planetData} />
+				<InfoPlanet planetData={planetData} />
+			</StyledContentContainer>
 		</StyledPlanet>
 	);
 };

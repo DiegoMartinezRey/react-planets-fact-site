@@ -5,6 +5,9 @@ const StyledPlanet = styled.div`
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+`;
+
+const StyledContentContainer = styled.div`
 	padding: 24px;
 `;
 
@@ -12,15 +15,24 @@ const StyledTextContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	text-align: center;
 `;
 
 const StyledTitle = styled.h1`
-	font-size: 40px;
+	font-family: 'Antonio', serif;
+	font-size: 40pt;
 `;
 
 const StyledOverviewText = styled.p`
-	font-size: 11px;
+	font-size: 11pt;
+	font-weight: 300;
 	line-height: 22px;
 `;
 
-export { StyledOverviewText, StyledPlanet, StyledTextContainer, StyledTitle };
+export {
+	StyledContentContainer,
+	StyledOverviewText,
+	StyledPlanet,
+	StyledTextContainer,
+	StyledTitle
+};

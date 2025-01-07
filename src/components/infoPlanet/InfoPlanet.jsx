@@ -9,19 +9,19 @@ const InfoPlanet = ({ planetData }) => {
 	return (
 		<StyledInfoGroupContainer>
 			<StyledInfoContainer>
-				<StyledInfoTitle>Rotation Time</StyledInfoTitle>
+				<StyledInfoTitle>ROTATION TIME</StyledInfoTitle>
 				<StyledInfoContent>{planetData.rotation}</StyledInfoContent>
 			</StyledInfoContainer>
 			<StyledInfoContainer>
-				<StyledInfoTitle>Revolution Time</StyledInfoTitle>
+				<StyledInfoTitle>REVOLUTION TIME</StyledInfoTitle>
 				<StyledInfoContent>{planetData.revolution}</StyledInfoContent>
 			</StyledInfoContainer>
 			<StyledInfoContainer>
-				<StyledInfoTitle>Radius</StyledInfoTitle>
+				<StyledInfoTitle>RADIUS</StyledInfoTitle>
 				<StyledInfoContent>{planetData.radius}</StyledInfoContent>
 			</StyledInfoContainer>
 			<StyledInfoContainer>
-				<StyledInfoTitle>Average Temp.</StyledInfoTitle>
+				<StyledInfoTitle>AVERAGE TEMP.</StyledInfoTitle>
 				<StyledInfoContent>{planetData.temperature}</StyledInfoContent>
 			</StyledInfoContainer>
 		</StyledInfoGroupContainer>

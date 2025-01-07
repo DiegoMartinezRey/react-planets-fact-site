@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import { PLANETS_INFO } from '../../constants/planets-info';
 import {
+	StyledIconBurger,
 	StyledIconPlanet,
 	StyledListItem,
 	StyledMenu,
 	StyledNavBar,
 	StyledPlanetContainer,
+	StyledPlanetName,
+	StyledPlanetsMenu,
 	StyledTitleMenu
 } from './navBar.styles';
 
@@ -17,30 +20,28 @@ const NavBar = () => {
 			<StyledTitleMenu to='/' onClick={() => setIsMenuOpen(false)}>
 				THE PLANETS
 			</StyledTitleMenu>
-			<img
+			<StyledIconBurger
 				src='/assets/icon-hamburger.svg'
 				alt='Menu icon'
+				$isOpen={isMenuOpen}
 				onClick={() => setIsMenuOpen(!isMenuOpen)}
 			/>
 			<StyledMenu $isOpen={isMenuOpen}>
-				<ul>
+				<StyledListItem>
 					{PLANETS_INFO.map(planet => (
-						<StyledListItem key={planet.name}>
-							<StyledTitleMenu
-								to={`/${planet.name.toLowerCase()}`}
-								onClick={() => setIsMenuOpen(false)}
-							>
-								<StyledPlanetContainer>
-									<StyledIconPlanet
-										$planet={planet.name.toLowerCase()}
-									></StyledIconPlanet>
-									<span>{planet.name}</span>
-								</StyledPlanetContainer>
-								<span>{'>'}</span>
-							</StyledTitleMenu>
-						</StyledListItem>
+						<StyledPlanetsMenu
+							key={planet.name}
+							to={`/${planet.name.toLowerCase()}`}
+							onClick={() => setIsMenuOpen(false)}
+						>
+							<StyledPlanetContainer>
+								<StyledIconPlanet $planetColor={planet.color} />
+								<StyledPlanetName>{planet.name.toUpperCase()}</StyledPlanetName>
+							</StyledPlanetContainer>
+							<span>{'>'}</span>
+						</StyledPlanetsMenu>
 					))}
-				</ul>
+				</StyledListItem>
 			</StyledMenu>
 		</StyledNavBar>
 	);

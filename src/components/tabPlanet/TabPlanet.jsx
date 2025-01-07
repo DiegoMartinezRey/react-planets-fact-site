@@ -10,15 +10,15 @@ const TabPlanet = ({ planetData, activeTab, setActiveTab }) => {
 	return (
 		<StyledMenuContent>
 			<StyledMenuTitle onClick={() => setActiveTab(0)}>
-				<span>Overview</span>
+				<span>OVERVIEW</span>
 				<StyledOverviewSelect $select={activeTab} $color={planetData.color} />
 			</StyledMenuTitle>
 			<StyledMenuTitle onClick={() => setActiveTab(1)}>
-				<span>Structure</span>
+				<span>STRUCTURE</span>
 				<StyledStructureSelect $select={activeTab} $color={planetData.color} />
 			</StyledMenuTitle>
 			<StyledMenuTitle onClick={() => setActiveTab(2)}>
-				<span>Surface</span>
+				<span>SURFACE</span>
 				<StyledSurfaceSelect $select={activeTab} $color={planetData.color} />
 			</StyledMenuTitle>
 		</StyledMenuContent>

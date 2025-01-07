@@ -22,20 +22,23 @@ const StyledNavBar = styled.nav`
 `;
 
 const StyledTitleMenu = styled(Link)`
-	font-size: 20px;
+	font-family: 'Antonio', serif;
+	font-size: 28px;
 	text-decoration: none;
 	display: flex;
 	justify-content: space-between;
-	width: 100%;
+	align-items: center;
 
 	&:hover {
-		background-color: #38384f;
 		cursor: pointer;
 	}
+`;
 
-	& > div {
-		display: flex;
-		gap: 25px;
+const StyledIconBurger = styled.img`
+	opacity: ${({ $isOpen }) => ($isOpen ? '0.2' : '1')};
+	transition: opacity 0.3s ease;
+	&:hover {
+		cursor: pointer;
 	}
 `;
 
@@ -51,13 +54,33 @@ const StyledMenu = styled.div`
 		left 0.3s ease,
 		opacity 0.3s ease;
 	z-index: 10;
+	overflow-y: hidden;
 `;
 
-const StyledListItem = styled.li`
+const StyledListItem = styled.ul`
+	display: flex;
+	flex-direction: column;
+	gap: 41px;
+	padding: 43px 29px 0 19px;
+`;
+
+const StyledPlanetsMenu = styled(Link)`
+	font-size: 28pt;
+	font-weight: 500;
+	letter-spacing: 1.36px;
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 16px 24px;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	& > span {
+		font-size: 15px;
+		color: rgba(255, 255, 255, 0.5);
+	}
 `;
 
 const StyledPlanetContainer = styled.div`
@@ -70,35 +93,21 @@ const StyledIconPlanet = styled.div`
 	width: 20px;
 	height: 20px;
 	border-radius: 50%;
-	background-color: ${({ $planet }) => {
-		switch ($planet) {
-			case 'mercury':
-				return '#419EBB';
-			case 'venus':
-				return '#EDA249';
-			case 'earth':
-				return '#6D2ED5';
-			case 'mars':
-				return '#D14C32';
-			case 'jupiter':
-				return '#D83A34';
-			case 'saturn':
-				return '#CD5120';
-			case 'uranus':
-				return '#1EC1A2';
-			case 'neptune':
-				return '#2D68F0';
-			default:
-				return 'white';
-		}
-	}};
+	background-color: ${({ $planetColor }) => $planetColor};
+`;
+
+const StyledPlanetName = styled.span`
+	font-size: 15pt;
 `;
 
 export {
+	StyledIconBurger,
 	StyledIconPlanet,
 	StyledListItem,
 	StyledMenu,
 	StyledNavBar,
 	StyledPlanetContainer,
+	StyledPlanetName,
+	StyledPlanetsMenu,
 	StyledTitleMenu
 };

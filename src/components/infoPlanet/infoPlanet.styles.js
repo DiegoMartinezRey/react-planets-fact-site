@@ -13,15 +13,17 @@ const StyledInfoContainer = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	padding: 13px 48px;
-	border: 1px solid #d8d8d8;
+	border: 1px solid rgba(255, 255, 255, 0.5);
 `;
 
 const StyledInfoTitle = styled.span`
-	font-size: 8px;
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 8pt;
 `;
 
 const StyledInfoContent = styled.span`
-	font-size: 20px;
+	font-family: 'Antonio', serif;
+	font-size: 20pt;
 `;
 
 export {

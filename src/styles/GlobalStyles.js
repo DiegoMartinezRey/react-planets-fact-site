@@ -27,5 +27,6 @@ export const GlobalStyles = createGlobalStyle`
     body{
         color: white;
         background-color: #070724;
+        font-family: "League Spartan", serif;
     }
 `;
