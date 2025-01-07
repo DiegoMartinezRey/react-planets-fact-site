@@ -5,13 +5,13 @@ import { GlobalStyles } from './styles/GlobalStyles';
 
 const App = () => {
 	return (
-		<div>
+		<>
 			<BrowserRouter>
 				<GlobalStyles />
 				<NavBar />
 				<Router />
 			</BrowserRouter>
-		</div>
+		</>
 	);
 };
 

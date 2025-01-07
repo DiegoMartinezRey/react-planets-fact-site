@@ -4,7 +4,10 @@ import InfoPlanet from '../../components/infoPlanet/InfoPlanet';
 import TabPlanet from '../../components/tabPlanet/TabPlanet';
 import { PLANETS_INFO } from '../../constants/planets-info';
 import {
+	StyledChangeInfoContainer,
 	StyledContentContainer,
+	StyledMenuBig,
+	StyledOptionInfo,
 	StyledOverviewText,
 	StyledPlanet,
 	StyledTextContainer,
@@ -36,13 +39,32 @@ const Planet = ({ planet }) => {
 			<StyledContentContainer>
 				<ImagePlanet planetData={planetData} activeTab={activeTab} />
 
-				<StyledTextContainer>
-					<StyledTitle>{planetData.name}</StyledTitle>
-					<StyledOverviewText>{planetData.overview.content}</StyledOverviewText>
-					<p>
-						Source: <a href={planetData.overview.source}>Wikipedia</a>
-					</p>
-				</StyledTextContainer>
+				<StyledChangeInfoContainer>
+					<StyledTextContainer>
+						<StyledTitle>{planetData.name}</StyledTitle>
+						<StyledOverviewText>
+							{planetData.overview.content}
+						</StyledOverviewText>
+						<p>
+							Source: <a href={planetData.overview.source}>Wikipedia</a>
+						</p>
+					</StyledTextContainer>
+
+					<StyledMenuBig>
+						<StyledOptionInfo onClick={() => setActiveTab(0)}>
+							<span>01</span>
+							<span>OVERVIEW</span>
+						</StyledOptionInfo>
+						<StyledOptionInfo onClick={() => setActiveTab(1)}>
+							<span>02</span>
+							<span>STRUCTURE</span>
+						</StyledOptionInfo>
+						<StyledOptionInfo onClick={() => setActiveTab(2)}>
+							<span>03</span>
+							<span>SURFACE</span>
+						</StyledOptionInfo>
+					</StyledMenuBig>
+				</StyledChangeInfoContainer>
 
 				<InfoPlanet planetData={planetData} />
 			</StyledContentContainer>

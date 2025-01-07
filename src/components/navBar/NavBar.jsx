@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { PLANETS_INFO } from '../../constants/planets-info';
 import {
+	StyledHorizontalMenu,
 	StyledIconBurger,
 	StyledIconPlanet,
+	StyledLinkPlanet,
 	StyledListItem,
+	StyledListPlanets,
 	StyledMenu,
 	StyledNavBar,
 	StyledPlanetContainer,
@@ -43,6 +46,15 @@ const NavBar = () => {
 					))}
 				</StyledListItem>
 			</StyledMenu>
+			<StyledHorizontalMenu>
+				{PLANETS_INFO.map(planet => (
+					<StyledListPlanets key={planet.name}>
+						<StyledLinkPlanet to={`/${planet.name.toLowerCase()}`}>
+							{planet.name.toUpperCase()}
+						</StyledLinkPlanet>
+					</StyledListPlanets>
+				))}
+			</StyledHorizontalMenu>
 		</StyledNavBar>
 	);
 };

@@ -6,7 +6,7 @@ const StyledButton = styled.button`
 	border: none;
 	padding: 0.5rem;
 
-	@media screen and (width>768px) {
+	@media screen and (width>767px) {
 		display: block;
 	}
 

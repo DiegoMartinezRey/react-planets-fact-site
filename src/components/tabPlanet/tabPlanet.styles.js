@@ -16,6 +16,10 @@ const StyledMenuContent = styled.div`
 		left: 0;
 		bottom: 0;
 	}
+
+	@media screen and (width>767px) {
+		display: none;
+	}
 `;
 
 const StyledMenuTitle = styled.span`

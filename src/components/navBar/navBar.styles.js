@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledNavBar = styled.nav`
-	background-color: #070724;
+	background-color: transparent;
 	padding: 16px 24px;
 	height: 68px;
 	display: flex;
@@ -18,6 +18,22 @@ const StyledNavBar = styled.nav`
 		position: absolute;
 		left: 0;
 		bottom: 0;
+	}
+
+	@media screen and (width>767px) {
+		height: 159px;
+		padding: 32px 52px 27px 51px;
+		display: flex;
+		flex-direction: column;
+		gap: 39px;
+	}
+
+	@media screen and (width>1023px) {
+		height: 85px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
 	}
 `;
 
@@ -37,8 +53,13 @@ const StyledTitleMenu = styled(Link)`
 const StyledIconBurger = styled.img`
 	opacity: ${({ $isOpen }) => ($isOpen ? '0.2' : '1')};
 	transition: opacity 0.3s ease;
+
 	&:hover {
 		cursor: pointer;
+	}
+
+	@media screen and (width>767px) {
+		display: none;
 	}
 `;
 
@@ -54,7 +75,10 @@ const StyledMenu = styled.div`
 		left 0.3s ease,
 		opacity 0.3s ease;
 	z-index: 10;
-	overflow-y: hidden;
+
+	@media screen and (width>767px) {
+		display: none;
+	}
 `;
 
 const StyledListItem = styled.ul`
@@ -100,10 +124,40 @@ const StyledPlanetName = styled.span`
 	font-size: 15pt;
 `;
 
+const StyledHorizontalMenu = styled.ul`
+	display: none;
+
+	@media screen and (width>767px) {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	@media screen and (width>1023px) {
+		max-width: 665px;
+	}
+`;
+
+const StyledListPlanets = styled.li`
+	font-size: 11pt;
+`;
+
+const StyledLinkPlanet = styled(Link)`
+	text-decoration: none;
+
+	&:hover {
+		cursor: pointer;
+	}
+`;
+
 export {
+	StyledHorizontalMenu,
 	StyledIconBurger,
 	StyledIconPlanet,
+	StyledLinkPlanet,
 	StyledListItem,
+	StyledListPlanets,
 	StyledMenu,
 	StyledNavBar,
 	StyledPlanetContainer,
